@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubernetes-django-deployment
+  name: kubernetes-django-deploy
   labels:
     app: kubernetes-django
 spec:
@@ -15,7 +15,7 @@ spec:
         app: kubernetes-django
     spec:
       containers:
-      - name: kubernetes-django
+      - name: kubernetes-django-app
         image: intuaition.azurecr.io/kubernetes-django:latest
         imagePullPolicy: IfNotPresent
         ports:
