@@ -16,7 +16,9 @@ spec:
     spec:
       containers:
       - name: kubernetes-django
-        image: kubernetes-django
+        image: intuaition.azurecr.io/kubernetes-django:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
+      imagePullSecrets:
+      - name: imgpull
