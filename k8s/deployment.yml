@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubernetes-django-deploy
+  name: kubernetes-django-deployment
   labels:
     app: kubernetes-django
 spec:
