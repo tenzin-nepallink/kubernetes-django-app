@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: kubernetes-django-app
-        image: intuaition.azurecr.io/kubernetes-django:latest
-        imagePullPolicy: IfNotPresent
+        image: intuaitionrepo.azurecr.io/kubernetes-django:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
       imagePullSecrets:
-      - name: imgpull
+      - name: acr-secret

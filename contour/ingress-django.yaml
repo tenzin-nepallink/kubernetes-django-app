@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: django-ingress
+  namespace: dev
+  annotations:
+    projectcontour.io/ingress.class: "dev"
+    #kubernetes.io/ingress.class: "dx-prod"
+    ingress.kubernetes.io/force-ssl-redirect: "false"
+    #ingress.kubernetes.io/ssl-passthrough: "true"
+    #kubernetes.io/ingress.allow-http: "true"
+    #kubernetes.io/tls-acme: "true"
+    #ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubernetes-django
+          servicePort: 8000 
+    host: django.intuaition.com
